@@ -1,0 +1,12 @@
+{
+  "seed": 42,
+  "num_trajectories": 100,
+  "num_times": 200,
+  "mass": 2.0,
+  "omega": 3.0,
+  "amplitude_min": 0.1,
+  "amplitude_max": 10.0,
+  "num_periods": 5,
+  "num_train": 64,
+  "num_validation": 16
+}
