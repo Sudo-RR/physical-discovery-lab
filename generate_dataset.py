@@ -46,4 +46,4 @@ def generate_dataset(config):
     q0_test = q0[test_indices]
     p0_test = p0[test_indices]
 
-    return q0_train, p0_train, q0_validation, p0_validation, q0_test, p0_test
+    return q0_train, p0_train, q0_validation, p0_validation, q0_test, p0_test, m, w, t
