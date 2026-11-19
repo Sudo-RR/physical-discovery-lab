@@ -28,11 +28,11 @@ def main(config, dataset_path, test_output_path, validation_output_path, trainin
 
     # Calculate errors
     E_initial_train = Energy(q0_train, p0_train, m, w)
-    E_train = Energy(train_output[:,0,:], train_output[:,1,:], m, w)
+    E_train = Energy(train_output[:,:,0], train_output[:,:,1], m, w)
     E_initial_validation = Energy(q0_validation, p0_validation, m, w)
-    E_validation = Energy(validation_output[:,0,:], validation_output[:,1,:], m, w)
+    E_validation = Energy(validation_output[:,:,0], validation_output[:,:,1], m, w)
     E_initial_test = Energy(q0_test, p0_test, m, w)
-    E_test = Energy(test_output[:,0,:], test_output[:,1,:], m, w)
+    E_test = Energy(test_output[:,:,0], test_output[:,:,1], m, w)
     abs_error_train, relative_residual_train = Error(E_initial_train, E_train)
     abs_error_validation, relative_residual_validation = Error(E_initial_validation, E_validation)
     abs_error_test, relative_residual_test = Error(E_initial_test, E_test)
