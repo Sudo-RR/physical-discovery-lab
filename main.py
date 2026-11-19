@@ -17,3 +17,4 @@ if __name__ == "__main__":
              q0_test=q0_test, p0_test=p0_test)
     train_output = TimeEvolution(q0_train, p0_train, m, w, t)
     print(f"Train Output Shape: {train_output.shape}")
+    np.savez("training_output.npz", train_output=train_output)
