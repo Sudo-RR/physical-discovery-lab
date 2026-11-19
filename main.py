@@ -1,13 +1,13 @@
 import numpy as np
-import sys
+
 from generate_dataset import *
 from oscillator import * 
 
 
-def main(argv):
-    
+def main(config):
+    import json
     # Load configuration
-    with open(argv[1], "r") as f:
+    with open(config, "r") as f:
         config = json.load(f)
 
     # Generate dataset
@@ -28,5 +28,6 @@ def main(argv):
 
     return train_output,validation_output,test_output
 
+import sys
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1])
