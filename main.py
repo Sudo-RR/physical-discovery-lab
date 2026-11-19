@@ -1,5 +1,5 @@
 import numpy as np
-
+import argparse
 from generate_dataset import *
 from oscillator import * 
 
@@ -30,4 +30,11 @@ def main(config, dataset_path, test_output_path, validation_output_path, trainin
 
 import sys
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", required=True, type=str, help="Path to the configuration JSON file.")
+    parser.add_argument("--dataset-path", required=True, type=str, help="Path to save the generated dataset (.npz file).")
+    parser.add_argument("--test-output-path", required=True, type=str, help="Path to save the test output (.npz file).")
+    parser.add_argument("--validation-output-path", required=True, type=str, help="Path to save the validation output (.npz file).")
+    parser.add_argument("--training-output-path", required=True, type=str, help="Path to save the training output (.npz file).")
+    args = parser.parse_args()
+    main(args.config, args.dataset_path, args.test_output_path, args.validation_output_path, args.training_output_path)
